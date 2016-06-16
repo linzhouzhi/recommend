@@ -67,3 +67,4 @@ m.recomm
 ml.predict <- predict(m.recomm, MovieLense[941:943], n = 3)
 str(ml.predict)
 as(ml.predict, "list")
+
