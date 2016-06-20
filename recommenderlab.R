@@ -68,3 +68,13 @@ ml.predict <- predict(m.recomm, MovieLense[941:943], n = 3)
 str(ml.predict)
 as(ml.predict, "list")
 
+#用户对item的评分预测
+ml.predict2 <- predict(m.recomm, MovieLense[941:943], type = "ratings")
+as(ml.predict2, "matrix")
+
+#模型的评估 RMSE（均平方根误差）
+rmse <- function(actuals, predicts)
+{
+  sqrt(mean((actuals - predicts)^2, na.rm = T))
+}
+
